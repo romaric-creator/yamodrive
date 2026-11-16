@@ -1,11 +1,117 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  darkMode: "class",
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        // Palette L'Écrin Noir & Blanc Pur
+        "noir-profond":   "#050505",
+        "noir-carbone":   "#0E0E0E",
+        "graphite":       "#1A1A1A",
+        "gris-moyen":     "#6B6B6B",
+        "gris-clair":     "#BDBDBD",
+        "blanc-casse":    "#F4F4F4",
+        "blanc-pur":      "#FFFFFF",
+        "glass-surface":  "rgba(255,255,255,0.06)",
+        "glass-border":   "rgba(255,255,255,0.12)",
+
+        // Admin & semantic UI tokens
+        bg:               "#F8F8F8",
+        surface:          "#FFFFFF",
+        border:           "rgba(0, 0, 0, 0.08)",
+        accent:           "#0A0A0A",
+        "accent-hover":   "#262626",
+        "text-primary":   "#0A0A0A",
+        "text-secondary": "#666666",
+        "text-muted":     "#9E9E9E",
+        warning:          "#F59E0B",
+        success:          "#10B981",
+        danger:           "#EF4444",
+
+        // Surface containers
+        "surface-container-lowest":  "#070707",
+        "surface-container-low":     "#0E0E0E",
+        "surface-container":         "#141414",
+        "surface-container-high":    "#1E1E1E",
+        "surface-container-highest": "#2A2A2A",
+        "on-surface":         "#E5E2E1",
+        "on-surface-variant": "#C4C7C8",
+        "primary":            "#FFFFFF",
+
+        // Status colors
+        "emerald-status": "#10B981",
+        "error-status":   "#EF4444",
+      },
+      fontFamily: {
+        display:        ["Sora", "sans-serif"],
+        data:           ["Space Grotesk", "monospace"],
+        body:           ["Inter", "sans-serif"],
+        "display-hero": ["Sora", "sans-serif"],
+        "headline-lg":  ["Sora", "sans-serif"],
+        "headline-md":  ["Sora", "sans-serif"],
+        "headline-sm":  ["Sora", "sans-serif"],
+        "price-display":["Space Grotesk", "monospace"],
+        "label-data":   ["Space Grotesk", "monospace"],
+        "label-status": ["Space Grotesk", "monospace"],
+        "body-lg":      ["Inter", "sans-serif"],
+        "body-md":      ["Inter", "sans-serif"],
+        "body-sm":      ["Inter", "sans-serif"],
+      },
+      fontSize: {
+        "display-hero":        ["72px", { lineHeight: "0.98", letterSpacing: "-0.04em", fontWeight: "800" }],
+        "display-hero-mobile": ["42px", { lineHeight: "1.08", letterSpacing: "-0.03em", fontWeight: "800" }],
+        "headline-lg":         ["46px", { lineHeight: "1.15", letterSpacing: "-0.03em", fontWeight: "700" }],
+        "headline-md":         ["32px", { lineHeight: "1.22", letterSpacing: "-0.02em", fontWeight: "600" }],
+        "headline-sm":         ["20px", { lineHeight: "1.32", letterSpacing: "-0.01em", fontWeight: "600" }],
+        "price-display":       ["24px", { lineHeight: "1.25", letterSpacing: "-0.01em", fontWeight: "700" }],
+        "body-lg":             ["18px", { lineHeight: "1.6",  fontWeight: "400" }],
+        "body-md":             ["15px", { lineHeight: "1.55", fontWeight: "400" }],
+        "body-sm":             ["13px", { lineHeight: "1.5",  fontWeight: "400" }],
+        "label-data":          ["13px", { lineHeight: "1.3",  letterSpacing: "0.03em", fontWeight: "500" }],
+        "label-status":        ["11px", { lineHeight: "1.2",  letterSpacing: "0.08em", fontWeight: "600" }],
+      },
+      spacing: {
+        "margin":          "4rem",
+        "margin-tablet":   "2rem",
+        "margin-mobile":   "1.25rem",
+        "gutter":          "1.5rem",
+        "space-xs":        "0.375rem",
+        "space-sm":        "0.625rem",
+        "space-md":        "1.125rem",
+        "space-lg":        "1.75rem",
+        "space-xl":        "2.75rem",
+        "space-2xl":       "4.5rem",
+        "space-3xl":       "7rem",
+      },
+      borderRadius: {
+        DEFAULT: "0.5rem",
+        lg:      "0.875rem",
+        xl:      "1.25rem",
+        "2xl":   "1.75rem",
+        full:    "9999px",
+      },
+      keyframes: {
+        marquee: {
+          "0%":   { transform: "translateX(0%)" },
+          "100%": { transform: "translateX(-50%)" },
+        },
+        shimmer: {
+          "0%":   { backgroundPosition: "-200% 0" },
+          "100%": { backgroundPosition: "200% 0" },
+        },
+        fadeUp: {
+          from: { opacity: "0", transform: "translateY(28px)" },
+          to:   { opacity: "1", transform: "translateY(0)" },
+        },
+      },
+      animation: {
+        "marquee":  "marquee 30s linear infinite",
+        "shimmer":  "shimmer 1.5s infinite",
+        "fade-up":  "fadeUp 0.6s ease forwards",
+      },
+      maxWidth: { "7xl": "80rem" },
+    },
   },
   plugins: [],
 }
